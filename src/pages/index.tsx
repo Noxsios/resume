@@ -7,7 +7,6 @@ const IndexPage = () => {
       <Typography variant="h1" color="initial">
         Resume
       </Typography>
-      <code>sudo apt-get update</code>
     </>
   );
 };
