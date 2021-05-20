@@ -5,7 +5,6 @@ module.exports = {
     author: "@noxsios",
   },
   plugins: [
-    "gatsby-theme-material-ui",
     {
       resolve: "gatsby-theme-material-ui",
       options: {
@@ -24,7 +23,6 @@ module.exports = {
     },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
