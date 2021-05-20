@@ -1,8 +1,27 @@
 module.exports = {
   siteMetadata: {
-    title: "resume",
+    title: "Harry Randazzo's Résumé",
+    description: "My résumé built w/ Gatsby.",
+    author: "@noxsios",
   },
   plugins: [
+    "gatsby-theme-material-ui",
+    {
+      resolve: "gatsby-theme-material-ui",
+      options: {
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: "Montserrat",
+                variants: ["300", "400", "500"],
+              },
+              { family: "Fira Code", variants: ["300", "400", "500"] },
+            ],
+          },
+        },
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
