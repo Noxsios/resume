@@ -1,3 +1,7 @@
+* {
+  scroll-margin-top: 2.5rem;
+}
+
 code {
   font-family: "Fira Code", monospace;
 }

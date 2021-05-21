@@ -33,7 +33,7 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         defaultLayouts: {
-          default: `${__dirname}/src/layouts/layout.tsx`,
+          default: `${__dirname}/src/layouts/mdx-layout.tsx`,
         },
       },
     },

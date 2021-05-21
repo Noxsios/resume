@@ -1,0 +1,11 @@
+.react-syntax-highlighter-line-number {
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: rgb(95, 95, 95);
+  min-width: 2.25em !important;
+}

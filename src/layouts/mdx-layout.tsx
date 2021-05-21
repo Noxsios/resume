@@ -1,10 +1,11 @@
 import { MDXProvider } from "@mdx-js/react";
-import { Link } from "gatsby-theme-material-ui";
+import { Link } from "@material-ui/core";
 import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import * as materialMDX from "./material-mdx";
-import Nav from "../components/Nav";
+import Nav from "./Nav";
+import Code from "../components/Code";
 
 const MDXComponents = {
   h1: materialMDX.typography("h1"),
@@ -14,6 +15,7 @@ const MDXComponents = {
   h5: materialMDX.typography("h5"),
   h6: materialMDX.typography("h6"),
   a: Link,
+  code: Code,
 };
 
 const useStyles = makeStyles((theme) => ({

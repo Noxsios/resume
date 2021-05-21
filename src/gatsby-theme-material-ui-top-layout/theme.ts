@@ -7,13 +7,18 @@ const theme = createMuiTheme({
   palette: {
     type: "dark",
     primary: {
-      main: "#5bc77f",
-    },
-    secondary: {
       main: "#c2870a",
     },
+    secondary: {
+      main: "#1c2659",
+    },
     text: {
-      primary: "#C0C0C0",
+      // primary: "#C0C0C0",
+      primary: "#a39e98",
+    },
+    background: {
+      default: "#27282D",
+      paper: "#3d3f47",
     },
   },
   overrides: {
@@ -23,10 +28,10 @@ const theme = createMuiTheme({
           width: "12px",
         },
         "::-webkit-scrollbar-track": {
-          background: "#a09f9f",
+          background: "#27282D",
         },
         "::-webkit-scrollbar-thumb": {
-          background: "#5bc77f",
+          background: "#c2870a",
         },
         "::-webkit-scrollbar-thumb:hover": {
           background: "#555",
