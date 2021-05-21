@@ -1,5 +1,8 @@
 [
   { "to": "/", "linkName": "🏡 Home" },
   { "to": "/test-markdown", "linkName": "🧪 Test" },
-  { "title": "blog", "pages": [{ "to": "/test", "linkName": "🧪 Test Blog" }] }
+  {
+    "title": "blog",
+    "pages": [{ "to": "/test", "linkName": "🧪 Test Blog" }]
+  }
 ]

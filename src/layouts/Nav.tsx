@@ -135,6 +135,7 @@ const AccordionSummary = withStyles((theme) => ({
       margin: 0,
     },
     display: "flex",
+    flexWrap: "wrap",
     margin: 0,
     paddingLeft: theme.spacing(2),
   },
@@ -194,6 +195,19 @@ export default function Nav() {
     setOpen(false);
   };
 
+  const currentLocation = (location) => {
+    const path = location.pathname.split("/")[location.pathname.split("/").length - 1];
+    // Might change this to directly match file name, idk
+    const currentLocation = path
+      .replace(/-/g, " ")
+      .replace(/%20/g, " ")
+      .split(" ")
+      .map((word) => word[0].toUpperCase() + word.substring(1))
+      .join(" ");
+
+    return currentLocation;
+  };
+
   return (
     <Location>
       {({ location }) => (
@@ -211,13 +225,7 @@ export default function Nav() {
               <Grid container justify="space-between" direction="row">
                 <Grid item xs>
                   <Typography variant="h6" className={classes.title} noWrap>
-                    {location.pathname === "/"
-                      ? "🏡 Home"
-                      : location.pathname
-                          .split("/")
-                          [location.pathname.split("/").length - 1].split("-")
-                          .map((word) => word[0].toUpperCase() + word.substring(1))
-                          .join(" ")}
+                    {currentLocation(location)}
                   </Typography>
                 </Grid>
               </Grid>
