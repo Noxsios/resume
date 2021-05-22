@@ -33,7 +33,7 @@ const IndexPage = () => {
             </Typography>
             <Divider variant="middle" style={{ marginTop: "0.75rem" }} />
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={8}>
             <ContactInfo />
           </Grid>
         </Grid>
