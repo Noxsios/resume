@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CodeBlock = ({ code, children, copy = true, showLineNumbers = true, className }) => {
+const CodeBlock = ({ children, copy = true, showLineNumbers = true, className = "language-text" }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [showCopy, setShowCopy] = useState(false);
@@ -84,7 +84,7 @@ const CodeBlock = ({ code, children, copy = true, showLineNumbers = true, classN
     <div className={classes.root} onMouseLeave={handleHideCopy} onMouseOver={handleShowCopy}>
       <div className={classes.codeblock}>
         {copy && (
-          <Clipboard className={clsx(classes.copyIcon, showCopy && classes.showCopyIcon)} data-clipboard-text={code || children}>
+          <Clipboard className={clsx(classes.copyIcon, showCopy && classes.showCopyIcon)} data-clipboard-text={children}>
             <Tooltip
               title="Copy to Clipboard"
               placement="left-end"
@@ -98,7 +98,7 @@ const CodeBlock = ({ code, children, copy = true, showLineNumbers = true, classN
           </Clipboard>
         )}
         <SyntaxHighlighter language={language} style={twilight} showLineNumbers={showLineNumbers} codeTagProps={{ className: classes.code }}>
-          {code || children}
+          {children}
         </SyntaxHighlighter>
       </div>
       <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>

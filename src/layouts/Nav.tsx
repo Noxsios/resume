@@ -15,6 +15,8 @@ import {
   AccordionDetails,
   IconButton,
   Grid,
+  ButtonBase,
+  Grow,
 } from "@material-ui/core";
 import { Menu as MenuIcon, ChevronLeft as ChevronLeftIcon, ExpandMore as ExpandMoreIcon, Settings as SettingIcon } from "@material-ui/icons";
 import directory from "./directory.json";
@@ -88,11 +90,13 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     paddingLeft: theme.spacing(2),
     width: "100%",
+    textAlign: "left",
   },
   focus: {
     color: theme.palette.background.default,
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.primary.main,
     pointerEvents: "none",
+    borderRadius: theme.spacing(0.5),
   },
   settingsFooter: {
     marginTop: "auto",
@@ -100,6 +104,16 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: theme.palette.secondary.main,
+  },
+  accordionDetails: {
+    padding: 0,
+    "& button": {
+      "& a": {
+        paddingLeft: theme.spacing(3),
+      },
+    },
+    display: "block",
+    margin: 0,
   },
 }));
 
@@ -130,8 +144,6 @@ const AccordionSummary = withStyles((theme) => ({
   },
   content: {
     "&$expanded": {
-      backgroundColor: theme.palette.primary.main,
-      color: theme.palette.background.default,
       margin: 0,
     },
     display: "flex",
@@ -146,9 +158,6 @@ const AccordionSummary = withStyles((theme) => ({
     position: "absolute",
     right: 0,
     color: theme.palette.primary.main,
-    "&$expanded": {
-      color: theme.palette.background.default,
-    },
     margin: 0,
   },
 }))(MuiAccordionSummary);
@@ -161,11 +170,11 @@ const LinkGroup = ({ children, title, location }) => {
   const isDefaultExpanded = explodedPath.slice(0, explodedPath.length - 1).includes(title);
 
   return (
-    <Accordion defaultExpanded={isDefaultExpanded}>
+    <Accordion defaultExpanded={isDefaultExpanded} TransitionComponent={Grow} TransitionProps={{ timeout: 500 }}>
       <AccordionSummary className={classes.link} expandIcon={<ExpandMoreIcon />}>
         <Typography variant="h6">{title[0].toUpperCase() + title.substring(1)}</Typography>
       </AccordionSummary>
-      <AccordionDetails style={{ padding: 0, margin: 0 }}>
+      <AccordionDetails className={classes.accordionDetails}>
         {children.map((entry) => (
           <SideLink to={"/" + title + entry.to} linkName={entry.linkName} key={"nav-link-entry-to-" + title + entry.to} />
         ))}
@@ -177,9 +186,11 @@ const LinkGroup = ({ children, title, location }) => {
 const SideLink = ({ to, linkName }) => {
   const classes = useStyles();
   return (
-    <Link to={to} className={classes.link} activeClassName={clsx(classes.link, classes.focus)}>
-      <Typography variant="h6">{linkName}</Typography>
-    </Link>
+    <ButtonBase style={{ width: "100%", cursor: "auto" }}>
+      <Link to={to} className={classes.link} activeClassName={clsx(classes.link, classes.focus)}>
+        <Typography variant="h6">{linkName}</Typography>
+      </Link>
+    </ButtonBase>
   );
 };
 

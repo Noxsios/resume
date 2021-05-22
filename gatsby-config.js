@@ -16,6 +16,7 @@ module.exports = {
                 variants: ["300", "400", "500"],
               },
               { family: "Fira Code", variants: ["300", "400", "500"] },
+              { family: "Recursive", variants: ["300", "400", "500"] },
             ],
           },
         },

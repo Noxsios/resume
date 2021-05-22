@@ -3,6 +3,24 @@ import { createMuiTheme } from "@material-ui/core";
 const theme = createMuiTheme({
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),
+    h1: {
+      fontFamily: 'Recursive, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, \'Open Sans\', FreeSans, sans-serif',
+    },
+    h2: {
+      fontFamily: 'Recursive, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, \'Open Sans\', FreeSans, sans-serif',
+    },
+    h3: {
+      fontFamily: 'Recursive, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, \'Open Sans\', FreeSans, sans-serif',
+    },
+    h4: {
+      fontFamily: 'Recursive, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, \'Open Sans\', FreeSans, sans-serif',
+    },
+    h5: {
+      fontFamily: 'Recursive, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, \'Open Sans\', FreeSans, sans-serif',
+    },
+    h6: {
+      fontFamily: 'Recursive, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, \'Open Sans\', FreeSans, sans-serif',
+    },
   },
   palette: {
     type: "dark",
