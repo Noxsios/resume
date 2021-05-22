@@ -59,4 +59,6 @@ const theme = createMuiTheme({
   },
 });
 
+// console.log(theme.palette);
+
 export default theme;
