@@ -13,3 +13,6 @@
 .codeblock-inline > * > .linenumber {
   display: none !important;
 }
+.codeblock-inline > .language-text {
+  color: #dbd7d2 !important;
+}

@@ -2,7 +2,7 @@ import { Typography, Grid, Container, Divider } from "@material-ui/core";
 import "../gatsby-theme-material-ui-top-layout/theme.css";
 import StandardLayout from "../layouts/standard-layout";
 import logo from "../images/icon.png";
-import Code from "../components/Code";
+import ContactInfo from "../components/ContactInfo";
 import InlineCode from "../components/InlineCode";
 
 const IndexPage = () => {
@@ -15,7 +15,7 @@ const IndexPage = () => {
           </Grid>
           <Grid item>
             <Typography variant="h2" align="center" color="primary">
-              Harry <InlineCode>{"'Razzle'"}</InlineCode> Randazzo
+              Harry <InlineCode className="language-javascript">{"'Razzle'"}</InlineCode> Randazzo
             </Typography>
           </Grid>
           <Grid item>
@@ -34,9 +34,7 @@ const IndexPage = () => {
             <Divider variant="middle" style={{ marginTop: "0.75rem" }} />
           </Grid>
           <Grid item>
-            <Code className="language-bash" showLineNumbers={false}>
-              {" curl -s meta.razzle.workers.dev | jq     "}
-            </Code>
+            <ContactInfo />
           </Grid>
         </Grid>
       </Container>

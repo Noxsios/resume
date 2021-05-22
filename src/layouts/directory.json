@@ -2,12 +2,7 @@
   { "to": "/", "linkName": "🏡 Home" },
   { "to": "/test-markdown", "linkName": "🧪 Test" },
   {
-    "title": "blog",
-    "pages": [
-      { "to": "/test", "linkName": "🧪 Test Blog" },
-      { "to": "/test", "linkName": "🧪 Test Blog" },
-      { "to": "/test", "linkName": "🧪 Test Blog" },
-      { "to": "/test", "linkName": "🧪 Test Blog" }
-    ]
+    "title": "dives",
+    "pages": [{ "to": "/test", "linkName": "🧪 Test Blog" }]
   }
 ]

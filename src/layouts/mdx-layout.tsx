@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import * as materialMDX from "./material-mdx";
 import Nav from "./Nav";
 import Code from "../components/Code";
+import InlineCode from "../components/InlineCode";
 
 const MDXComponents = {
   h1: materialMDX.header("h1"),
@@ -16,7 +17,8 @@ const MDXComponents = {
   h6: materialMDX.header("h6"),
   a: Link,
   code: Code,
-  hr: Divider,
+  hr: materialMDX.divider(),
+  inlineCode: InlineCode,
 };
 
 const useStyles = makeStyles((theme) => ({
