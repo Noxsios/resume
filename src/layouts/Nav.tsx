@@ -196,16 +196,21 @@ export default function Nav() {
   };
 
   const currentLocation = (location) => {
-    const path = location.pathname.split("/")[location.pathname.split("/").length - 1];
+    const expath = location.pathname.split("/").filter((str) => str !== "");
+    if (expath.length === 0) {
+      return "🏡 Home";
+    }
+    const path = expath[expath.length - 1];
+
     // Might change this to directly match file name, idk
-    const currentLocation = path
+    const current = path
       .replace(/-/g, " ")
       .replace(/%20/g, " ")
       .split(" ")
       .map((word) => word[0].toUpperCase() + word.substring(1))
       .join(" ");
 
-    return currentLocation;
+    return current;
   };
 
   return (

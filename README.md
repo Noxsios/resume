@@ -17,6 +17,8 @@ I wanted to create a resume / CV / portfolio website in Gatsby.
 $ curl -s meta.razzle.workers.dev | jq
 ```
 
+or
+
 ```powershell
 > (iwr meta.razzle.workers.dev).content | ConvertFrom-Json | Format-List
 ```
