@@ -21,7 +21,7 @@ const ContactInfo = () => {
   return (
     <>
       <Code className="language-bash" showLineNumbers={false}>
-        {"curl -s meta.noxsios.net | jq   "}
+        {"curl -sL meta.noxsios.net | jq   "}
       </Code>
       {meta && !loading && (
         <Code className="language-json" showLineNumbers={false} copy={false}>

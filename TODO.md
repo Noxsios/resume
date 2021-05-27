@@ -1,0 +1,2 @@
+- [ ] add social links
+- [ ] irm 'meta.noxsios.net' | ConvertTo-Json
