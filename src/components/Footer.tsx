@@ -1,10 +1,11 @@
 import { Divider, IconButton, makeStyles } from "@material-ui/core";
-import { GitHub, Instagram, Phone } from "@material-ui/icons";
+import { GitHub, Instagram, Phone, LinkedIn } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
     textAlign: "center",
-    marginTop: "1rem",
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
   },
 }));
 
@@ -21,6 +22,9 @@ const Footer = () => {
       </IconButton>
       <IconButton color="primary" href="tel:+19087216743" target="_blank">
         <Phone />
+      </IconButton>
+      <IconButton color="primary" href="https://www.linkedin.com/in/harry-randazzo/" target="_blank">
+        <LinkedIn />
       </IconButton>
       © Harry Randazzo
     </footer>
