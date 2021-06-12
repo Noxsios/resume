@@ -1,6 +1,5 @@
 import StandardLayout from "../layouts/standard-layout";
 import {
-  Container,
   Accordion,
   AccordionDetails,
   AccordionSummary,
@@ -10,13 +9,11 @@ import {
   AccordionActions,
   Button,
   Divider,
+  Container,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    paddingTop: theme.spacing(2),
-  },
   tldr: {
     borderLeft: `4px solid ${theme.palette.secondary.main}`,
     padding: "0.5rem",
@@ -62,40 +59,38 @@ const folio: Array<Folio> = [
 const Portfolio = () => {
   const classes = useStyles();
   return (
-    <StandardLayout>
-      <Container maxWidth="lg" className={classes.root}>
-        <Grid container spacing={3} direction="column" justify="center" alignItems="center">
-          {folio.map((entry) => (
-            <Grid item style={{ width: "100%" }}>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon color="primary" />}
-                  aria-label="Expand"
-                  aria-controls="-content"
-                  id={entry.title.toLowerCase().replace(/\s/g, "-") + "-accordion"}
-                >
-                  <Typography color="primary">{entry.title}</Typography>
-                </AccordionSummary>
-                <AccordionDetails className={classes.accordionDetails}>
-                  <Typography className={classes.tldr}>{entry.tldr}</Typography>
-                </AccordionDetails>
-                <Divider variant="middle" />
-                <AccordionActions>
-                  {entry.site && (
-                    <Button href={entry.site} target="_blank" variant="outlined">
-                      Site
-                    </Button>
-                  )}
-                  <Button href={entry.repo} target="_blank" color="primary" variant="outlined">
-                    Repo
+    <Container maxWidth="lg">
+      <Grid container spacing={3} direction="column" justify="center" alignItems="center">
+        {folio.map((entry) => (
+          <Grid item style={{ width: "100%" }}>
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon color="primary" />}
+                aria-label="Expand"
+                aria-controls="-content"
+                id={entry.title.toLowerCase().replace(/\s/g, "-") + "-accordion"}
+              >
+                <Typography color="primary">{entry.title}</Typography>
+              </AccordionSummary>
+              <AccordionDetails className={classes.accordionDetails}>
+                <Typography className={classes.tldr}>{entry.tldr}</Typography>
+              </AccordionDetails>
+              <Divider variant="middle" />
+              <AccordionActions>
+                {entry.site && (
+                  <Button href={entry.site} target="_blank" variant="outlined">
+                    Site
                   </Button>
-                </AccordionActions>
-              </Accordion>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </StandardLayout>
+                )}
+                <Button href={entry.repo} target="_blank" color="primary" variant="outlined">
+                  Repo
+                </Button>
+              </AccordionActions>
+            </Accordion>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 };
 
