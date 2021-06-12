@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Code from "./Code";
+import clsx from "clsx";
 
 const ContactInfo = () => {
   const [meta, setMeta] = useState({});
@@ -22,6 +23,10 @@ const ContactInfo = () => {
     <>
       <Code className="language-bash" showLineNumbers={false}>
         {"curl -sL meta.noxsios.net | jq   "}
+      </Code>
+      <div style={{ textAlign: "center" }}>or</div>
+      <Code className="language-powershell" showLineNumbers={false}>
+        {"irm meta.noxsios.net | ConvertTo-Json   "}
       </Code>
       {meta && !loading && (
         <Code className="language-json" showLineNumbers={false} copy={false}>

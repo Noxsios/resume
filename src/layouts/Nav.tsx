@@ -16,7 +16,6 @@ import {
   IconButton,
   Grid,
   ButtonBase,
-  Grow,
 } from "@material-ui/core";
 import { Menu as MenuIcon, ChevronLeft as ChevronLeftIcon, ExpandMore as ExpandMoreIcon, Settings as SettingIcon } from "@material-ui/icons";
 import directory from "./directory.json";
@@ -32,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         height: 0,
       },
     },
-    marginTop: "2.5rem",
+    marginTop: "3rem",
   },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
@@ -170,9 +169,9 @@ const LinkGroup = ({ children, title, location }) => {
   const isDefaultExpanded = explodedPath.slice(0, explodedPath.length - 1).includes(title);
 
   return (
-    <Accordion defaultExpanded={isDefaultExpanded} TransitionComponent={Grow} TransitionProps={{ timeout: 500 }}>
+    <Accordion defaultExpanded={isDefaultExpanded} TransitionProps={{ timeout: 500 }}>
       <AccordionSummary className={classes.link} expandIcon={<ExpandMoreIcon />}>
-        <Typography variant="h6">{title[0].toUpperCase() + title.substring(1)}</Typography>
+        <Typography variant="h6">{title}</Typography>
       </AccordionSummary>
       <AccordionDetails className={classes.accordionDetails}>
         {children.map((entry) => (
@@ -186,11 +185,14 @@ const LinkGroup = ({ children, title, location }) => {
 const SideLink = ({ to, linkName }) => {
   const classes = useStyles();
   return (
-    <ButtonBase style={{ width: "100%", cursor: "auto" }}>
-      <Link to={to} className={classes.link} activeClassName={clsx(classes.link, classes.focus)}>
-        <Typography variant="h6">{linkName}</Typography>
-      </Link>
-    </ButtonBase>
+    <>
+      <ButtonBase style={{ width: "100%", cursor: "auto" }}>
+        <Link to={to} className={classes.link} activeClassName={clsx(classes.link, classes.focus)}>
+          <Typography variant="h6">{linkName}</Typography>
+        </Link>
+      </ButtonBase>
+      <Divider />
+    </>
   );
 };
 
@@ -204,24 +206,6 @@ export default function Nav() {
 
   const handleDrawerClose = () => {
     setOpen(false);
-  };
-
-  const currentLocation = (location) => {
-    const expath = location.pathname.split("/").filter((str) => str !== "");
-    if (expath.length === 0) {
-      return "🏡 Home";
-    }
-    const path = expath[expath.length - 1];
-
-    // Might change this to directly match file name, idk
-    const current = path
-      .replace(/-/g, " ")
-      .replace(/%20/g, " ")
-      .split(" ")
-      .map((word) => word[0].toUpperCase() + word.substring(1))
-      .join(" ");
-
-    return current;
   };
 
   return (
@@ -238,13 +222,6 @@ export default function Nav() {
               <IconButton color="inherit" onClick={handleDrawerOpen} edge="start" className={clsx(classes.menuButton, open && classes.hide)}>
                 <MenuIcon />
               </IconButton>
-              <Grid container justify="space-between" direction="row">
-                <Grid item xs>
-                  <Typography variant="h6" className={classes.title} noWrap>
-                    {currentLocation(location)}
-                  </Typography>
-                </Grid>
-              </Grid>
             </Toolbar>
           </AppBar>
           <Drawer
@@ -273,6 +250,7 @@ export default function Nav() {
                 return <SideLink to={entry.to} linkName={entry.linkName} key={"nav-link-entry-to-" + entry.to} />;
               }
             })}
+            <Divider />
             <div className={classes.settingsFooter}>
               <Grid container direction="row" justify="center" alignItems="center">
                 <Grid item>

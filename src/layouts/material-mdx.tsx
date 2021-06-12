@@ -1,17 +1,26 @@
 import { memo } from "react";
 import { Divider, Typography, Paper, Table as MuiTable, TableRow, TableCell, TableBody, TableHead } from "@material-ui/core";
 
+const gutterBottom = {
+  marginBottom: "0.35em",
+};
+
 const components = {
   p: () => {
-    const P = (props) => <Typography style={{ marginTop: "0.5rem", marginBottom: "0.5rem" }} {...props} />;
+    const P = (props) => <Typography {...props} gutterBottom style={{ marginTop: "0.35em" }} />;
     return memo(P);
   },
   header: (variant) => {
-    const H = (props) => <Typography {...props} color="primary" variant={variant} />;
+    const H = (props) => (
+      <>
+        <Typography {...props} color="primary" variant={variant} />
+        <Divider style={{ ...gutterBottom }} />
+      </>
+    );
     return memo(H);
   },
   blockquote: () => {
-    const BQ = (props) => <Paper style={{ borderLeft: "4px solid #1976d2", padding: "0.5rem" }} {...props} />;
+    const BQ = (props) => <Paper style={{ borderLeft: "4px solid #1976d2", padding: "0.5rem", ...gutterBottom }} {...props} />;
     return memo(BQ);
   },
   divider: () => {
@@ -19,15 +28,15 @@ const components = {
     return memo(HR);
   },
   ul: () => {
-    const Ul = (props) => <Typography {...props} component="ul" />;
+    const Ul = (props) => <Typography {...props} component="ul" gutterBottom />;
     return memo(Ul);
   },
   ol: () => {
-    const Ol = (props) => <Typography {...props} component="ol" />;
+    const Ol = (props) => <Typography {...props} component="ol" gutterBottom />;
     return memo(Ol);
   },
   li: () => {
-    const LI = (props) => <Typography {...props} component="li" />;
+    const LI = (props) => <Typography {...props} component="li" gutterBottom />;
     return memo(LI);
   },
   table: () => {

@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Clipboard from "react-clipboard.js";
 import CopyIcon from "@material-ui/icons/FileCopyOutlined";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { twilight } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Alert from "@material-ui/lab/Alert";
 import "./Code.css";
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,12 +19,12 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "'Fira Code', monospace",
   },
   code: {
-    color: "#8db0cc",
+    color: theme.palette.primary.light,
     fontFamily: "'Fira Code', monospace",
   },
   copyIcon: {
-    opacity: 0.4,
-    transition: "opacity 0.5s",
+    opacity: 0,
+    transition: "opacity 0.3s",
     border: "none",
     color: theme.palette.grey[400],
     marginTop: 5,
@@ -97,7 +97,7 @@ const CodeBlock = ({ children, copy = true, showLineNumbers = true, className = 
             </Tooltip>
           </Clipboard>
         )}
-        <SyntaxHighlighter language={language} style={twilight} showLineNumbers={showLineNumbers} codeTagProps={{ className: classes.code }}>
+        <SyntaxHighlighter language={language} style={atomDark} showLineNumbers={showLineNumbers} codeTagProps={{ className: classes.code }}>
           {children}
         </SyntaxHighlighter>
       </div>

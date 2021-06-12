@@ -1,8 +1,12 @@
 [
   { "to": "/", "linkName": "🏡 Home" },
-  { "to": "/test-markdown", "linkName": "🧪 Test" },
+  { "to": "/about", "linkName": "📄 About" },
   {
-    "title": "dives",
-    "pages": [{ "to": "/test", "linkName": "🧪 Test Blog" }]
-  }
+    "title": "🌊 Dives",
+    "pages": [
+      { "to": "/archive", "linkName": "Archive" },
+      { "to": "/test-markdown", "linkName": "🧪 Test" }
+    ]
+  },
+  { "to": "/portfolio", "linkName": "📃 Portfolio" }
 ]

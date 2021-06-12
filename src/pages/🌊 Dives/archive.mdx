@@ -1,0 +1,67 @@
+## Archive
+
+The `archive` command is available on all Cisco IOS devices v12.3+. This command deals with manipulating the methods a config can be automatically saved. While a lesser used command, it is nonetheless powerful. Features include -
+
+- Auto save config to network / seperate place in storage upon executing the command `do wr` or `copy run start`.
+- Auto save config based on a preset schedule.
+- Keeping a set number of previous configurations, extremely useful for performing rollback procedures.
+- Viewing differences between archived configs.
+
+#### Example Setup + Breakdown
+
+A basic setup looks like so:
+
+```js
+archive
+path flash://HOSTNAME-$t
+max 5
+write-memory
+exit
+```
+
+Breaking down this configuration:
+
+1. First we entered the archive config mode using `archive`, your prompt should update to `Hostname(configure-archive)`
+2. Then we set the path for where our archived configs will be stored, in my example we are saving to the flash, but any network accessible destination is fair game (HTTP, FTP,RCP,TFTP are some such examples).
+   1. The HOSTNAME portion of `flash://HOSTNAME-$t` is for example use only, in prod use the actual devices hostname. `$t` is a special addition that represents the timestamp that the config was archived at. A number will always be appended to the end of the archive name that represents its order.
+   2. The timestamp `$t` will be of the format MMM-DD-HH:MM:SS
+
+> It is worth noting that if you choose to save the configs to a network location, they will be saved as text files without file name extensions.
+
+1. Thirdly, we set the maximum number of archived configs, when this limit is reached, the oldest archive will be overwritten.
+2. Lastly, we set this archive process to trigger upon every time the config is saved. If this command is not given, the archive process can only be triggered by executing `archive config`, or by setting up a timed interval with `time-period X`, where X is in minutes.
+
+An example of a `sh archive` :
+
+```js
+
+HOSTNAME# show archive
+There are currently 3 archive configurations saved.
+The next archive file will be named flash:HOSTNAME-3
+Archive # Name
+0
+1 flash:HOSTNAME-1
+2 flash:HOSTNAME-2 <- Most Recent
+3
+4
+5
+
+```
+
+#### Using Archive to display config differences
+
+Another feature of storing your configuration changes using the archive system is the ability to view configuration changes / differences inside of your Cisco IOS shell. The base command are:
+
+`sh archive config differences <path to file 1> <path to file 2>`
+
+- This command accepts two file paths as arguments and will display only the lines / config differences between the two.
+
+EXAMPLE HERE
+
+```js
+`sh archive config incremental-diffs <path to config>`
+
+- This command will report the differences between the running-config and the config specified
+```
+
+TO BE CONTINUED...

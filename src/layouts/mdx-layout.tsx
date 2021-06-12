@@ -1,6 +1,6 @@
 import { MDXProvider } from "@mdx-js/react";
-import { Link } from "@material-ui/core";
-import { Container } from "@material-ui/core";
+import { Link, useScrollTrigger, Zoom, Fab, Container } from "@material-ui/core";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { makeStyles } from "@material-ui/core/styles";
 
 import materialMDX from "./material-mdx";
@@ -36,8 +36,37 @@ const MDXComponents = {
 const useStyles = makeStyles((theme) => ({
   mdxContainer: {
     overflowX: "hidden",
+    paddingBottom: "3rem",
+  },
+  scrollToTop: {
+    position: "fixed",
+    bottom: theme.spacing(2),
+    right: theme.spacing(2),
   },
 }));
+
+const ScrollTop = () => {
+  const classes = useStyles();
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    window.scrollTo({ behavior: "smooth", top: 0 });
+  };
+
+  return (
+    <Zoom in={trigger}>
+      <div onClick={handleClick} role="presentation" className={classes.scrollToTop}>
+        <Fab color="primary" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </div>
+    </Zoom>
+  );
+};
 
 export default function Layout({ children }) {
   const classes = useStyles();
@@ -48,6 +77,7 @@ export default function Layout({ children }) {
       <Container maxWidth="md" className={classes.mdxContainer}>
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
       </Container>
+      <ScrollTop />
     </>
   );
 }

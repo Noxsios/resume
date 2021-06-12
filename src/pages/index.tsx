@@ -4,6 +4,9 @@ import StandardLayout from "../layouts/standard-layout";
 import logo from "../images/icon.png";
 import ContactInfo from "../components/ContactInfo";
 import InlineCode from "../components/InlineCode";
+import ReactRotatingText from "react-rotating-text";
+
+const randomInterval = () => Math.floor(Math.random() * 100) + 50;
 
 const IndexPage = () => {
   return (
@@ -20,7 +23,7 @@ const IndexPage = () => {
           </Grid>
           <Grid item>
             <Typography variant="h6" align="center" color="primary">
-              Network Engineer | Software Developer
+              <ReactRotatingText items={["Network Engineer", "Software Developer", "Nerd", "Razzle-Dazzle"]} typingInterval={randomInterval()} />
             </Typography>
             <Divider variant="middle" style={{ marginTop: "0.75rem" }} />
           </Grid>
