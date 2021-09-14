@@ -1,6 +1,6 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createTheme } from "@material-ui/core";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),
     h1: {

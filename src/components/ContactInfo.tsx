@@ -21,11 +21,11 @@ const ContactInfo = () => {
   return (
     <>
       <Code className="language-bash" showLineNumbers={false}>
-        {"curl -sL meta.noxsios.net   "}
+        {"curl -sL meta.noxsios.net"}
       </Code>
       <div style={{ textAlign: "center" }}>or</div>
       <Code className="language-powershell" showLineNumbers={false}>
-        {"irm meta.noxsios.net | ConvertTo-Json   "}
+        {"irm meta.noxsios.net | ConvertTo-Json"}
       </Code>
       {meta && !loading && (
         <Code className="language-json" showLineNumbers={false} copy={false}>
