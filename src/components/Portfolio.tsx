@@ -1,4 +1,3 @@
-import StandardLayout from "../layouts/standard-layout";
 import {
   Accordion,
   AccordionDetails,
