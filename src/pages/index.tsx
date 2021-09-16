@@ -1,4 +1,4 @@
-import { Typography, Grid, Container, Divider, makeStyles } from "@material-ui/core";
+import { Typography, Grid, Container, Divider, makeStyles, Button } from "@material-ui/core";
 import "../gatsby-theme-material-ui-top-layout/theme.css";
 import StandardLayout from "../layouts/standard-layout";
 import logo from "../images/icon.png";
@@ -49,6 +49,10 @@ const IndexPage = () => {
 
           <Grid item xs={12} sm={8}>
             <ContactInfo />
+          </Grid>
+
+          <Grid item xs={12} sm={8}>
+            <Button href="/poke-me">Poke Me!</Button>
           </Grid>
           <Grid item xs={12} sm={8}>
             <About />
