@@ -15,10 +15,10 @@ import materialMDX from "../components/material-mdx";
 import Code from "../components/Code";
 import InlineCode from "../components/InlineCode";
 
-declare module "@mui/styles/defaultTheme" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
+// declare module "@mui/styles/defaultTheme" {
+//   // eslint-disable-next-line @typescript-eslint/no-empty-interface
+//   interface DefaultTheme extends Theme {}
+// }
 
 const MDXComponents = {
   p: materialMDX.p(),
@@ -50,6 +50,8 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content={theme.palette.primary.main} />
+        <link rel="icon" href="/icon.png" />
       </Head>
       <MDXProvider components={MDXComponents}>
         <StyledEngineProvider injectFirst>

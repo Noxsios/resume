@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Snackbar, Alert, Typography } from "@mui/material";
 import Clipboard from "react-clipboard.js";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -32,10 +32,11 @@ const CodeBlock = ({ children, copy = true, showLineNumbers = true, className = 
     setOpen(true);
   };
 
-  const handleClose = (event, reason) => {
+  const handleClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
     if (reason === "clickaway") {
       return;
     }
+
     setOpen(false);
   };
 
