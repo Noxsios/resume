@@ -1,0 +1,77 @@
+* {
+  scroll-margin-top: 2.5rem;
+}
+
+/* ::-webkit-scrollbar {
+  width: 12px;
+}
+/* ::-webkit-scrollbar-track {
+  background: #27282d;
+}
+::-webkit-scrollbar-thumb {
+  background: #c2870a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} */
+
+code {
+  font-family: "Fira Code", monospace;
+}
+
+.react-rotating-text-cursor {
+  animation: blinking-cursor 0.9s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
+}
+
+@keyframes blinking-cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* custom react-syntax-hightlighter styling */
+.react-syntax-highlighter-line-number {
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: rgb(95, 95, 95);
+  min-width: 2.25em !important;
+}
+
+.code-copy {
+  border: none;
+  background: none;
+}
+
+.code-copy:hover {
+  cursor: pointer;
+}
+
+.codeblock-inline {
+  border: none !important;
+  padding-left: 0.3em !important;
+  padding-right: 0.3em !important;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+  width: fit-content !important;
+  display: inline-flex !important;
+  font-size: 80% !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.codeblock-inline > * > .linenumber {
+  display: none !important;
+}
+.codeblock-inline > .language-text {
+  color: #caac84 !important;
+}

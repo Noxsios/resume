@@ -1,16 +1,6 @@
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-  Grid,
-  makeStyles,
-  AccordionActions,
-  Button,
-  Divider,
-  Container,
-} from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Accordion, AccordionDetails, AccordionSummary, Typography, Grid, AccordionActions, Button, Divider, Container } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const useStyles = makeStyles((theme) => ({
   tldr: {
@@ -59,9 +49,9 @@ const Portfolio = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="lg">
-      <Grid container spacing={3} direction="column" justify="center" alignItems="center">
-        {folio.map((entry) => (
-          <Grid item style={{ width: "100%" }}>
+      <Grid container spacing={3} direction="column" justifyContent="center" alignItems="center">
+        {folio.map((entry, idx) => (
+          <Grid item style={{ width: "100%" }} key={idx}>
             <Accordion>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon color="primary" />}

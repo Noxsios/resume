@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://noxsios.net">
-    <img alt="Gatsby" src="./src/images/icon.png" width="60" />
+    <img alt="logo goes here" src="./src/images/icon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -9,12 +9,12 @@
 
 ## 📜 tldr;
 
-I wanted to create a resume / CV / portfolio website in Gatsby.
+I wanted to create a resume / CV / portfolio website.
 
 ## 📞 Contact
 
 ```bash
-$ curl -s meta.razzle.workers.dev | jq
+$ curl -sL meta.razzle.workers.dev
 ```
 
 or

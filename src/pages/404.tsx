@@ -1,6 +1,5 @@
-import * as React from "react";
-import { Link } from "gatsby-theme-material-ui";
-import Typography from "@material-ui/core/Typography";
+import Link from "next/Link";
+import Typography from "@mui/material/Typography";
 
 const NotFoundPage = () => {
   return (
@@ -22,7 +21,7 @@ const NotFoundPage = () => {
           </>
         ) : null}
         <br />
-        <Link to="/">Go home</Link>.
+        <Link href="/">Go home</Link>.
       </p>
     </main>
   );

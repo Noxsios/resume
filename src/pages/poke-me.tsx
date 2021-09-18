@@ -1,21 +1,23 @@
 import * as React from "react";
-import { Button, Container, TextField, makeStyles, Typography } from "@material-ui/core";
+import { Button, Container, TextField, Typography } from "@mui/material";
+import { styled } from "@mui/system";
 
-const useStyles = makeStyles((theme) => ({
+const styles = {
   root: {
     marginTop: "10%",
   },
-  title: { margin: theme.spacing(2.5) },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  title: { margin: 2.5 },
   input: {
-    margin: theme.spacing(1),
+    margin: 1,
     width: "90%",
   },
+};
+
+const Form = styled("form")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
 }));
 
 interface ContactForm {
@@ -28,7 +30,6 @@ interface ContactForm {
 const defaultData = { "first-name": "", "last-name": "", email: "", message: "Poke!" };
 
 const PokeMePage = () => {
-  const classes = useStyles();
   const now = new Date();
   const timeNow = now.toLocaleTimeString();
   const [formData, setFormData] = React.useState<ContactForm>(defaultData);
@@ -44,22 +45,20 @@ const PokeMePage = () => {
   };
 
   return (
-    <Container maxWidth={"sm"} className={classes.root}>
-      <form autoComplete={"false"} className={classes.form} onSubmit={handleSubmit}>
-        <Typography variant="h5" color="initial" className={classes.title}>
+    <Container maxWidth={"sm"} sx={styles.root}>
+      <Form autoComplete={"false"} onSubmit={handleSubmit}>
+        <Typography variant="h5" color="primary" sx={styles.title}>
           Thanks for taking the time to poke me!
         </Typography>
-        <TextField id="first-name" label="First Name" required className={classes.input} onChange={handleChange("first-name")} />
-        <TextField id="last-name" label="Last Name" required className={classes.input} onChange={handleChange("last-name")} />
-        <TextField id="email" label="Email" required className={classes.input} onChange={handleChange("email")} />
-        <TextField id="message" label="Message" variant="outlined" multiline rows={4} className={classes.input} onChange={handleChange("message")} />
-        <Typography variant="overline" color="initial">
-          The time is {timeNow}
-        </Typography>
-        <Button variant="contained" type="submit" className={classes.input}>
+        <TextField id="first-name" label="First Name" sx={styles.input} required onChange={handleChange("first-name")} />
+        <TextField id="last-name" label="Last Name" sx={styles.input} required onChange={handleChange("last-name")} />
+        <TextField id="email" label="Email" sx={styles.input} required onChange={handleChange("email")} />
+        <TextField id="message" label="Message" sx={styles.input} variant="outlined" multiline rows={4} onChange={handleChange("message")} />
+        <Typography variant="overline">The time is {timeNow}</Typography>
+        <Button variant="contained" type="submit">
           Poke Me!
         </Button>
-      </form>
+      </Form>
     </Container>
   );
 };

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Divider, Typography, Paper, Table as MuiTable, TableRow, TableCell, TableBody, TableHead } from "@material-ui/core";
+import { Divider, Typography, Paper, Table as MuiTable, TableRow, TableCell, TableBody, TableHead } from "@mui/material";
 
 const gutterBottom = {
   marginBottom: "0.35em",
@@ -11,12 +11,15 @@ const components = {
     return memo(P);
   },
   header: (variant) => {
-    const H = (props) => (
-      <>
-        <Typography {...props} color="primary" variant={variant} />
-        <Divider style={{ ...gutterBottom }} />
-      </>
-    );
+    const H = (props) => {
+      const newProps = { ...props, children: "<" + props.children + " />" };
+      return (
+        <>
+          <Typography {...newProps} color="primary" variant={variant} sx={{ mt: 1 }} />
+          <Divider style={{ ...gutterBottom }} />
+        </>
+      );
+    };
     return memo(H);
   },
   blockquote: () => {
