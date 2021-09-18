@@ -1,16 +1,15 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography, Grid, AccordionActions, Button, Divider, Container } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { styled } from "@mui/system";
 
-const useStyles = makeStyles((theme) => ({
-  tldr: {
-    borderLeft: `4px solid ${theme.palette.secondary.main}`,
-    padding: "0.5rem",
-    marginBottom: "0.35em",
-  },
-  accordionDetails: {
-    flexDirection: "column",
-  },
+const TLDR = styled(Typography)(({ theme }) => ({
+  borderLeft: `4px solid ${theme.palette.secondary.main}`,
+  padding: "0.5rem",
+  marginBottom: "0.35em",
+}));
+
+const AccordionDetailsStyled = styled(AccordionDetails)(({ theme }) => ({
+  flexDirection: "column",
 }));
 
 interface Folio {
@@ -46,7 +45,6 @@ const folio: Array<Folio> = [
 ];
 
 const Portfolio = () => {
-  const classes = useStyles();
   return (
     <Container maxWidth="lg">
       <Grid container spacing={3} direction="column" justifyContent="center" alignItems="center">
@@ -56,14 +54,14 @@ const Portfolio = () => {
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon color="primary" />}
                 aria-label="Expand"
-                aria-controls="-content"
+                aria-controls={"portfolio-content-" + idx}
                 id={entry.title.toLowerCase().replace(/\s/g, "-") + "-accordion"}
               >
                 <Typography color="primary">{entry.title}</Typography>
               </AccordionSummary>
-              <AccordionDetails className={classes.accordionDetails}>
-                <Typography className={classes.tldr}>{entry.tldr}</Typography>
-              </AccordionDetails>
+              <AccordionDetailsStyled>
+                <TLDR>{entry.tldr}</TLDR>
+              </AccordionDetailsStyled>
               <Divider variant="middle" />
               <AccordionActions>
                 {entry.site && (

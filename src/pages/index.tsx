@@ -47,7 +47,7 @@ const IndexPage = () => {
         <Grid item xs={12} sm={8}>
           <About />
         </Grid>
-        <Grid item xs={12} sm={8} id="contact" sx={{ width: 100 }}>
+        <Grid item xs={12} sm={8} id="contact" sx={{ width: "100%" }}>
           <ContactInfo />
         </Grid>
       </Grid>
