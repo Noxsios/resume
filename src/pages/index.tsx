@@ -4,11 +4,15 @@ import ContactInfo from "../components/ContactAPI";
 import InlineCode from "../components/InlineCode";
 import ReactRotatingText from "react-rotating-text";
 import About from "../components/About.mdx";
-// import Image from "next/image";
 
 const randomInterval = () => Math.floor(Math.random() * 100) + 50;
 
 const IndexPage = () => {
+  const scrollToContactInfo = () => {
+    const contactInfo = document.getElementById("contact");
+    contactInfo.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <Container maxWidth="lg" sx={{ mt: 1 }}>
       <Grid container spacing={3} direction="column" justifyContent="space-around" alignItems="center" alignContent="center">
@@ -33,7 +37,7 @@ const IndexPage = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={8}>
-          <Button href="#contact" variant="contained" sx={{ width: "100%" }}>
+          <Button variant="contained" sx={{ width: "100%" }} onClick={scrollToContactInfo}>
             Contact Me
           </Button>
         </Grid>

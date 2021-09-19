@@ -4,7 +4,7 @@ import "@fontsource/montserrat";
 import "@fontsource/recursive";
 import "../styles/theme.css";
 import theme from "../styles/theme";
-import { StyledEngineProvider, Theme, ThemeProvider } from "@mui/material/styles";
+import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline, Link, Container } from "@mui/material";
 import { AppProps } from "next/app";
 import Head from "next/head";
@@ -14,11 +14,6 @@ import Footer from "../components/Footer";
 import materialMDX from "../components/material-mdx";
 import Code from "../components/Code";
 import InlineCode from "../components/InlineCode";
-
-// declare module "@mui/styles/defaultTheme" {
-//   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-//   interface DefaultTheme extends Theme {}
-// }
 
 const MDXComponents = {
   p: materialMDX.p(),
@@ -52,6 +47,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content={theme.palette.primary.main} />
         <link rel="icon" href="/icon.png" />
+        <title>Razzle's Résumé</title>
       </Head>
       <MDXProvider components={MDXComponents}>
         <StyledEngineProvider injectFirst>
