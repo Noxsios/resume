@@ -47,7 +47,9 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content={theme.palette.primary.main} />
         <link rel="icon" href="/icon.png" />
-        <title>Razzle's Résumé</title>
+        <title>
+          Razzle{"'"}s R{"é"}sum{"é"}
+        </title>
       </Head>
       <MDXProvider components={MDXComponents}>
         <StyledEngineProvider injectFirst>
