@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Snackbar, Alert, Typography } from "@mui/material";
-import Clipboard from "react-clipboard.js";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { styled } from "@mui/system";
 
-const MyCodeBlock = styled("div")({
+const StyledCodeBlock = styled("div")({
   position: "relative",
   "& pre": {
     border: "none !important",
@@ -13,7 +12,7 @@ const MyCodeBlock = styled("div")({
   },
 });
 
-const MyRoot = styled("div")({
+const Root = styled("div")({
   "@global": {
     "::-webkit-scrollbar": {
       height: 5,
@@ -29,6 +28,7 @@ const CodeBlock = ({ children, copy = true, showLineNumbers = true, className = 
   const language = className.split("-")[1];
 
   const handleClick = () => {
+    navigator.clipboard.writeText(children);
     setOpen(true);
   };
 
@@ -41,25 +41,23 @@ const CodeBlock = ({ children, copy = true, showLineNumbers = true, className = 
   };
 
   return (
-    <MyRoot>
-      <MyCodeBlock>
+    <Root>
+      <StyledCodeBlock>
         <SyntaxHighlighter language={language} style={atomDark} showLineNumbers={showLineNumbers}>
           {children}
         </SyntaxHighlighter>
         {copy && (
-          <Clipboard data-clipboard-text={children} className="code-copy">
-            <Typography variant="caption" color="GrayText" onClick={handleClick}>
-              Click to copy.
-            </Typography>
-          </Clipboard>
+          <Typography variant="caption" color="GrayText" onClick={handleClick} sx={{ "&:hover": { cursor: "pointer" } }}>
+            Click to copy.
+          </Typography>
         )}
-      </MyCodeBlock>
+      </StyledCodeBlock>
       <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           Copied to Clipboard!
         </Alert>
       </Snackbar>
-    </MyRoot>
+    </Root>
   );
 };
 
