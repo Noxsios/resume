@@ -1,5 +1,5 @@
 import { Divider, IconButton } from "@mui/material";
-import { GitHub, Instagram, Phone, LinkedIn } from "@mui/icons-material";
+import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
 import { styled } from "@mui/system";
 
 const CustomFooter = styled("footer")(({ theme }) => ({
@@ -17,9 +17,6 @@ const Footer = () => {
       </IconButton>
       <IconButton color="primary" href="https://instagram.com/randazzoharry" target="_blank" size="large">
         <Instagram />
-      </IconButton>
-      <IconButton color="primary" href="tel:+19087216743" target="_blank" size="large">
-        <Phone />
       </IconButton>
       <IconButton color="primary" href="https://www.linkedin.com/in/harry-randazzo/" target="_blank" size="large">
         <LinkedIn />
