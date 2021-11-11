@@ -9,7 +9,7 @@ const ContactAPI = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    fetch("https://meta.noxsios.net/")
+    fetch("https://meta.razzle.cloud/")
       .then((res) => res.json())
       .then((json) => {
         setMeta(JSON.stringify(json, null, 2));
@@ -39,12 +39,12 @@ const ContactAPI = () => {
           </TabList>
           <TabPanel value="1" sx={{ p: 0 }}>
             <Code className="language-bash" showLineNumbers={false}>
-              {"curl -sL meta.noxsios.net"}
+              {"curl -sL meta.razzle.cloud"}
             </Code>
           </TabPanel>
           <TabPanel value="2" sx={{ p: 0 }}>
             <Code className="language-powershell" showLineNumbers={false}>
-              {"irm meta.noxsios.net | ConvertTo-Json"}
+              {"irm meta.razzle.cloud | ConvertTo-Json"}
             </Code>
           </TabPanel>
         </TabContext>
