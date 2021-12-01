@@ -21,6 +21,12 @@ interface Folio {
 
 const folio: Array<Folio> = [
   {
+    title: "palx-pwa",
+    tldr: "Automatic UI Color Palette Generator PWA.  Uses the palx API to generate a palette, then render all the shades, as well as provide download buttons for a variety of formats.",
+    repo: "https://github.com/Noxsios/palx-pwa",
+    site: "https://palx-pwa.pages.dev/",
+  },
+  {
     title: "DSN Converter",
     tldr: "Just another DSN converter. What sets this apart is that it is a PWA, and has full offline capabilties with a native mobile app feel.",
     repo: "https://github.com/Noxsios/dsn-converter",
@@ -41,6 +47,12 @@ const folio: Array<Folio> = [
     title: "PowerShell IP Address Editor",
     tldr: "PowerShell GUI for rapidly / easily changing Windows 10 IPv4 address. Contains some bugs, gotta go back and fix.",
     repo: "https://gist.github.com/Noxsios/b97bfb9ad1fefff63247434aeb53a8a6",
+  },
+  {
+    title: "Grogu Ascii Animation",
+    tldr: "Inspired by parrot.live, this is a simple ASCII animation using Cloudflare Workers.",
+    repo: "https://gist.github.com/Noxsios/487672f6b37582f5d440d8fe8c1d1191",
+    site: "https://grogu.razzle.workers.dev/",
   },
 ];
 
