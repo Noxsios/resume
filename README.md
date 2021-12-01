@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://noxsios.net">
-    <img alt="logo goes here" src="./src/images/icon.png" width="60" />
+  <a href="https://razzle.cloud">
+    <img alt="logo goes here" src="./public/icon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -14,13 +14,13 @@ I wanted to create a resume / CV / portfolio website.
 ## 📞 Contact
 
 ```bash
-$ curl -sL meta.razzle.workers.dev
+$ curl -sL meta.razzle.cloud
 ```
 
 or
 
 ```powershell
-> irm meta.noxsios.net | ConvertTo-Json
+> irm meta.razzle.cloud | ConvertTo-Json
 ```
 
 
