@@ -49,6 +49,11 @@ const folio: Array<Folio> = [
     repo: "https://gist.github.com/Noxsios/b97bfb9ad1fefff63247434aeb53a8a6",
   },
   {
+    title: "Powershell Simple Network Config Templating",
+    tldr: "PowerShell script w/ GUI to quickly and easily generate multiple config files from a single template.",
+    repo: "https://github.com/Noxsios/Simple-Network-Template",
+  },
+  {
     title: "Grogu Ascii Animation",
     tldr: "Inspired by parrot.live, this is a simple ASCII animation using Cloudflare Workers.",
     repo: "https://gist.github.com/Noxsios/487672f6b37582f5d440d8fe8c1d1191",
