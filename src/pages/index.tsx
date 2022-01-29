@@ -17,9 +17,15 @@ const IndexPage = () => {
     <Container maxWidth="lg" sx={{ mt: 1 }}>
       <Grid container spacing={3} direction="column" justifyContent="space-around" alignItems="center" alignContent="center">
         <Grid item>
-          <img src="/icon.png" width="100" height="100" alt="logo" />
+          <img
+            src="/pfp.png"
+            width="200"
+            height="200"
+            alt="logo"
+            style={{ marginTop: "1rem", filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))" }}
+          />
         </Grid>
-        <Grid item>
+        <Grid item style={{ paddingTop: "0" }}>
           <Typography variant="h2" align="center" color="primary">
             Harry <InlineCode className="language-javascript">{"'Razzle'"}</InlineCode> Randazzo
           </Typography>

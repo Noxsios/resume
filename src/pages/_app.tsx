@@ -46,7 +46,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content={theme.palette.primary.main} />
-        <link rel="icon" href="/icon.png" />
+        <link rel="icon" href="/pfp.png" />
         <title>
           Razzle{"'"}s R{"é"}sum{"é"}
         </title>
