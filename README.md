@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://razzle.cloud">
-    <img alt="logo goes here" src="./public/icon.png" width="60" />
+    <img alt="logo goes here" src="./public/pfp.png" width="60" />
   </a>
 </p>
 <h1 align="center">
