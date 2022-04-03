@@ -13,7 +13,7 @@ const ContactAPI = () => {
         setMeta(JSON.stringify(json, null, 2));
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setMeta(JSON.stringify(["💀 He's dead Jim.", "Looks like the meta CloudFlare worker is down."], null, 2));
         setLoading(false);
       });
