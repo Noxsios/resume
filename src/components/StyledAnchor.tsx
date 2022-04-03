@@ -1,7 +1,13 @@
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import { Anchor } from "@mantine/core";
+import React from "react";
 
-const StyledAnchor = (props) => (
+interface StyledAnchorProps extends LinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+const StyledAnchor = (props: StyledAnchorProps) => (
   <Link passHref href={props.href}>
     <Anchor
       sx={(theme) => ({

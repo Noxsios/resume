@@ -1,4 +1,4 @@
-import { FiGithub as GitHub, FiInstagram as Instagram, FiLinkedin, FiLinkedin as LinkedIn } from "react-icons/fi";
+import { FiGithub as GitHub, FiInstagram as Instagram, FiLinkedin as LinkedIn } from "react-icons/fi";
 import StyledAnchor from "./StyledAnchor";
 export interface Folio {
   title: string;
@@ -48,7 +48,6 @@ const data: Data = {
       repo: "https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/bb-docs-generator",
       site: "https://docs-bigbang.pages.dev/",
     },
-    ,
     {
       title: "palx-pwa",
       tldr: "Automatic UI Color Palette Generator PWA.  Uses the palx API to generate a palette, then render all the shades, as well as provide download buttons for a variety of formats.",
@@ -92,7 +91,7 @@ const data: Data = {
   socials: [
     { url: "https://github.com/noxsios", icon: <GitHub size={24} />, color: "gray" },
     { url: "https://instagram.com/randazzoharry", icon: <Instagram size={24} />, color: "grape" },
-    { url: "https://www.linkedin.com/in/harry-randazzo/", icon: <FiLinkedin size={24} />, color: "blue" },
+    { url: "https://www.linkedin.com/in/harry-randazzo/", icon: <LinkedIn size={24} />, color: "blue" },
   ],
 };
 
