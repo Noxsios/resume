@@ -1,17 +1,5 @@
-import { Accordion, AccordionDetails, AccordionSummary, Typography, Grid, AccordionActions, Button, Divider, Container } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { styled } from "@mui/system";
-
-const TLDR = styled(Typography)(({ theme }) => ({
-  borderLeft: `4px solid ${theme.palette.secondary.main}`,
-  padding: "0.5rem",
-  marginBottom: "0.35em",
-}));
-
-const AccordionDetailsStyled = styled(AccordionDetails)(({ theme }) => ({
-  flexDirection: "column",
-}));
-
+import { Container, Divider, Accordion, Box, Button, Text } from "@mantine/core";
 interface Folio {
   title: string;
   tldr: string;
@@ -70,37 +58,32 @@ const folio: Array<Folio> = [
 
 const Portfolio = () => {
   return (
-    <Container maxWidth="lg">
-      <Grid container spacing={3} direction="column" justifyContent="center" alignItems="center">
+    <Container>
+      <Accordion multiple>
         {folio.map((entry, idx) => (
-          <Grid item style={{ width: "100%" }} key={idx}>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon color="primary" />}
-                aria-label="Expand"
-                aria-controls={"portfolio-content-" + idx}
-                id={entry.title.toLowerCase().replace(/\s/g, "-") + "-accordion"}
-              >
-                <Typography color="primary">{entry.title}</Typography>
-              </AccordionSummary>
-              <AccordionDetailsStyled>
-                <TLDR>{entry.tldr}</TLDR>
-              </AccordionDetailsStyled>
-              <Divider variant="middle" />
-              <AccordionActions>
-                {entry.site && (
-                  <Button href={entry.site} target="_blank" variant="outlined">
-                    Site
-                  </Button>
-                )}
-                <Button href={entry.repo} target="_blank" color="primary" variant="outlined">
-                  Repo
+          <Accordion.Item
+            icon={<ExpandMoreIcon color="primary" />}
+            aria-label="Expand"
+            aria-controls={"portfolio-content-" + idx}
+            id={entry.title.toLowerCase().replace(/\s/g, "-") + "-accordion"}
+            key={idx}
+            label={entry.title}
+          >
+            <Text>{entry.tldr}</Text>
+            <Divider />
+            <Box>
+              {entry.site && (
+                <Button component="a" href={entry.site} target="_blank">
+                  Site
                 </Button>
-              </AccordionActions>
-            </Accordion>
-          </Grid>
+              )}
+              <Button component="a" href={entry.repo} target="_blank">
+                Repo
+              </Button>
+            </Box>
+          </Accordion.Item>
         ))}
-      </Grid>
+      </Accordion>
     </Container>
   );
 };

@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/styled": "^11.8.1",
     "@fontsource/fira-code": "^4.5.8",
     "@fontsource/montserrat": "^4.5.7",
     "@fontsource/recursive": "^4.5.4",
@@ -20,6 +21,7 @@
     "@mantine/next": "^4.1.1",
     "@mantine/prism": "^4.1.1",
     "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.3",
     "@next/mdx": "^12.1.4",
     "@types/node": "^17.0.23",
     "@types/react": "^17.0.43",

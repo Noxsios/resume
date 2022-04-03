@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { Typography, Grid, Container, Divider, Button } from "@mui/material";
 import ContactInfo from "../components/ContactAPI";
-import InlineCode from "../components/InlineCode";
+// import InlineCode from "../components/InlineCode";
 import ReactRotatingText from "react-rotating-text";
-import About from "../components/About.mdx";
+import About from "../components/About";
+import { Stack, Box, Container, Button, Divider, Text, Title } from "@mantine/core";
 
 const randomInterval = () => Math.floor(Math.random() * 100) + 50;
 
@@ -14,9 +14,9 @@ const IndexPage = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 1 }}>
-      <Grid container spacing={3} direction="column" justifyContent="space-around" alignItems="center" alignContent="center">
-        <Grid item>
+    <Container sx={{ mt: 1 }}>
+      <Stack>
+        <Box>
           <img
             src="/pfp.png"
             width="200"
@@ -24,36 +24,36 @@ const IndexPage = () => {
             alt="logo"
             style={{ marginTop: "1rem", filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))" }}
           />
-        </Grid>
-        <Grid item style={{ paddingTop: "0" }}>
-          <Typography variant="h2" align="center" color="primary">
-            Harry <InlineCode className="language-javascript">{"'Razzle'"}</InlineCode> Randazzo
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography variant="h6" align="center" color="primary">
+        </Box>
+        <Box style={{ paddingTop: "0" }}>
+          <Title order={2} align="center" color="primary">
+            Harry <code>{"'Razzle'"}</code> Randazzo
+          </Title>
+        </Box>
+        <Box>
+          <Title order={4} align="center" color="primary">
             <ReactRotatingText items={["Network Engineer", "Software Developer", "Nerd", "Razzle-Dazzle"]} typingInterval={randomInterval()} />
-          </Typography>
-          <Divider variant="middle" sx={{ marginTop: 2 }} />
-        </Grid>
-        <Grid item>
-          <Typography variant="subtitle1" align="left" component="div" color="textSecondary" sx={{ fontFamily: "Fira Code, monospace" }}>
+          </Title>
+          <Divider sx={{ marginTop: 2 }} />
+        </Box>
+        <Box>
+          <Text align="left" component="div" color="textSecondary" sx={{ fontFamily: "Fira Code, monospace" }}>
             Hi there, I&apos;m Razzle: a software developer and network engineer currently employed by the U.S. Air Force. I like solving problems and
             building things.
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={8}>
-          <Button variant="contained" sx={{ width: "100%" }} onClick={scrollToContactInfo}>
+          </Text>
+        </Box>
+        <Box>
+          <Button sx={{ width: "100%" }} onClick={scrollToContactInfo}>
             Contact Me
           </Button>
-        </Grid>
-        <Grid item xs={12} sm={8}>
+        </Box>
+        <Box>
           <About />
-        </Grid>
-        <Grid item xs={12} sm={8} id="contact" sx={{ width: "100%" }}>
+        </Box>
+        <Box id="contact" sx={{ width: "100%" }}>
           <ContactInfo />
-        </Grid>
-      </Grid>
+        </Box>
+      </Stack>
     </Container>
   );
 };
