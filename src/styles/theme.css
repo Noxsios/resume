@@ -1,5 +1,6 @@
 * {
   scroll-margin-top: 2.5rem;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {

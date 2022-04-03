@@ -1,10 +1,54 @@
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Container, Divider, Accordion, Box, Button, Text } from "@mantine/core";
+import { Container, Divider, Accordion, Button, Text, Group, AccordionProps, createStyles } from "@mantine/core";
 interface Folio {
   title: string;
   tldr: string;
   repo: string;
   site?: string;
+}
+
+const useStyles = createStyles((theme, _params, getRef) => ({
+  control: {
+    ref: getRef("control"),
+    border: 0,
+    opacity: 0.6,
+    color: theme.colorScheme === "dark" ? theme.colors.gray[3] : theme.black,
+
+    "&:hover": {
+      backgroundColor: "transparent",
+      opacity: 1,
+    },
+  },
+
+  item: {
+    borderBottom: 0,
+    overflow: "hidden",
+    transition: `box-shadow 150ms ${theme.transitionTimingFunction}`,
+    border: `1px solid ${theme.colors.dark[5]}`,
+    borderRadius: theme.radius.sm,
+  },
+
+  itemOpened: {
+    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.white,
+    borderColor: theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[3],
+
+    [`& .${getRef("control")}`]: {
+      opacity: 1,
+    },
+
+    [`& .${getRef("icon")}`]: {
+      transform: "rotate(45deg)",
+    },
+  },
+
+  content: {
+    paddingLeft: 0,
+  },
+}));
+
+function StyledAccordion(props: AccordionProps) {
+  const { classes } = useStyles();
+  return <Accordion classNames={classes} {...props} />;
 }
 
 const folio: Array<Folio> = [
@@ -58,33 +102,32 @@ const folio: Array<Folio> = [
 
 const Portfolio = () => {
   return (
-    <Container>
-      <Accordion multiple>
-        {folio.map((entry, idx) => (
-          <Accordion.Item
-            icon={<ExpandMoreIcon color="primary" />}
-            aria-label="Expand"
-            aria-controls={"portfolio-content-" + idx}
-            id={entry.title.toLowerCase().replace(/\s/g, "-") + "-accordion"}
-            key={idx}
-            label={entry.title}
-          >
-            <Text>{entry.tldr}</Text>
-            <Divider />
-            <Box>
-              {entry.site && (
-                <Button component="a" href={entry.site} target="_blank">
-                  Site
-                </Button>
-              )}
-              <Button component="a" href={entry.repo} target="_blank">
-                Repo
+    <StyledAccordion initialItem={0} multiple iconPosition="right">
+      {folio.map((entry, idx) => (
+        <Accordion.Item
+          icon={<ExpandMoreIcon color="primary" />}
+          aria-label="Expand"
+          aria-controls={"portfolio-content-" + idx}
+          id={entry.title.toLowerCase().replace(/\s/g, "-") + "-accordion"}
+          key={idx}
+          label={entry.title}
+          my="lg"
+        >
+          <Text>{entry.tldr}</Text>
+          <Divider my="xs" mx="lg" />
+          <Group position="right" my="sm">
+            {entry.site && (
+              <Button uppercase variant="outline" component="a" href={entry.site} target="_blank" color="violet">
+                Site
               </Button>
-            </Box>
-          </Accordion.Item>
-        ))}
-      </Accordion>
-    </Container>
+            )}
+            <Button uppercase variant="outline" component="a" href={entry.repo} target="_blank" color="teal">
+              Repo
+            </Button>
+          </Group>
+        </Accordion.Item>
+      ))}
+    </StyledAccordion>
   );
 };
 

@@ -1,4 +1,5 @@
 import Portfolio from "./Portfolio";
+import { Text } from "@mantine/core";
 export default function About() {
   return (
     <>
@@ -21,14 +22,11 @@ export default function About() {
 - COMPTIA Sec+ Certification
 - (Soon) CCNA
 - More to come...
-
-#### Projects
-
-
-`}
-      <br />
-
-      <Portfolio />
+`
+        .split("\n")
+        .map((str, idx) => {
+          return <Text key={idx}>{str}</Text>;
+        })}
     </>
   );
 }

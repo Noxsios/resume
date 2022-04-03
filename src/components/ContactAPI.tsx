@@ -21,22 +21,20 @@ const ContactAPI = () => {
 
   return (
     <>
-      <Title order={4}>
-        {"<"}Contact {"/>"}
-      </Title>
-      <Divider sx={{ mb: "0.35em" }} />
-      <Center>
-        <Prism.Tabs>
-          <Prism.Tab label="Linux/Mac" language="bash">
+      <Title order={4}>{"👉"} Contact</Title>
+      <Divider />
+      <Center my="md">
+        <Prism.Tabs position="center">
+          <Prism.Tab sx={{ width: "16.5rem" }} label="Linux/Mac" language="bash">
             {"curl -sL meta.razzle.cloud"}
           </Prism.Tab>
-          <Prism.Tab label="Windows" language="bash">
+          <Prism.Tab sx={{ width: "22rem" }} label="Windows" language="bash">
             {"irm meta.razzle.cloud | ConvertTo-Json"}
           </Prism.Tab>
         </Prism.Tabs>
       </Center>
       {meta && !loading && (
-        <Prism language="json" noCopy>
+        <Prism sx={{ width: "75%", margin: "0 auto" }} language="json" noCopy>
           {meta}
         </Prism>
       )}
@@ -45,3 +43,5 @@ const ContactAPI = () => {
 };
 
 export default ContactAPI;
+
+// TODO: style tabs
