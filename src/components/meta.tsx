@@ -1,7 +1,5 @@
-import Link from "next/link";
 import { FiGithub as GitHub, FiInstagram as Instagram, FiLinkedin, FiLinkedin as LinkedIn } from "react-icons/fi";
-import { Anchor } from "@mantine/core";
-
+import StyledAnchor from "./StyledAnchor";
 export interface Folio {
   title: string;
   tldr: string;
@@ -19,25 +17,6 @@ interface Data {
     color: string;
   }[];
 }
-
-const StyledAnchor = (props) => (
-  <Link passHref href={props.href}>
-    <Anchor
-      sx={(theme) => ({
-        backgroundColor: theme.colors.gray[8],
-        borderRadius: "0.2rem",
-        padding: "2px",
-        "&:hover": {
-          backgroundColor: theme.colors.gray[7],
-        },
-        color: theme.colors.blue[3],
-      })}
-      rel="noopener noreferrer"
-      target="_blank"
-      {...props}
-    />
-  </Link>
-);
 
 const data: Data = {
   skills: [
