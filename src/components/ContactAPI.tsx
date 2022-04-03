@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import Code from "./Code";
-import { Tab, Box, Typography, Divider } from "@mui/material";
-import { TabContext, TabPanel, TabList } from "@mui/lab";
+import { Prism } from "@mantine/prism";
+import { Center, Title, Divider } from "@mantine/core";
 
 const ContactAPI = () => {
   const [meta, setMeta] = useState<string>("");
-  const [value, setValue] = useState<string>("1");
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -21,38 +19,26 @@ const ContactAPI = () => {
       });
   }, []);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-  };
-
   return (
     <>
-      <Typography variant="h4" color="primary">
+      <Title order={4}>
         {"<"}Contact {"/>"}
-      </Typography>
+      </Title>
       <Divider sx={{ mb: "0.35em" }} />
-      <Box sx={{ typography: "body1", display: "flex", alignItems: "center", flexDirection: "column", p: 0 }}>
-        <TabContext value={value}>
-          <TabList onChange={handleChange} aria-label="meta CLI query command" sx={{ justifyContent: "space-evenly" }}>
-            <Tab label="Linux/Mac" value="1" />
-            <Tab label="Windows" value="2" />
-          </TabList>
-          <TabPanel value="1" sx={{ p: 0 }}>
-            <Code className="language-bash" showLineNumbers={false}>
-              {"curl -sL meta.razzle.cloud"}
-            </Code>
-          </TabPanel>
-          <TabPanel value="2" sx={{ p: 0 }}>
-            <Code className="language-powershell" showLineNumbers={false}>
-              {"irm meta.razzle.cloud | ConvertTo-Json"}
-            </Code>
-          </TabPanel>
-        </TabContext>
-      </Box>
+      <Center>
+        <Prism.Tabs>
+          <Prism.Tab label="Linux/Mac" language="bash">
+            {"curl -sL meta.razzle.cloud"}
+          </Prism.Tab>
+          <Prism.Tab label="Windows" language="bash">
+            {"irm meta.razzle.cloud | ConvertTo-Json"}
+          </Prism.Tab>
+        </Prism.Tabs>
+      </Center>
       {meta && !loading && (
-        <Code className="language-json" showLineNumbers={false} copy={false}>
+        <Prism language="json" noCopy>
           {meta}
-        </Code>
+        </Prism>
       )}
     </>
   );

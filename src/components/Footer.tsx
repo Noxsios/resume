@@ -1,28 +1,21 @@
-import { Divider, IconButton } from "@mui/material";
 import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
-import { styled } from "@mui/system";
-
-const CustomFooter = styled("footer")(({ theme }) => ({
-  textAlign: "center",
-  marginTop: theme.spacing(2),
-  marginBottom: theme.spacing(2),
-}));
+import { Footer as MantineFooter, Divider, ActionIcon } from "@mantine/core";
 
 const Footer = () => {
   return (
-    <CustomFooter>
-      <Divider variant="middle" />
-      <IconButton color="primary" href="https://github.com/noxsios" target="_blank" size="large">
+    <MantineFooter height={40}>
+      <Divider mx="md" />
+      <ActionIcon component="a" href="https://github.com/noxsios" target="_blank">
         <GitHub />
-      </IconButton>
-      <IconButton color="primary" href="https://instagram.com/randazzoharry" target="_blank" size="large">
+      </ActionIcon>
+      <ActionIcon component="a" href="https://instagram.com/randazzoharry" target="_blank">
         <Instagram />
-      </IconButton>
-      <IconButton color="primary" href="https://www.linkedin.com/in/harry-randazzo/" target="_blank" size="large">
+      </ActionIcon>
+      <ActionIcon component="a" href="https://www.linkedin.com/in/harry-randazzo/" target="_blank">
         <LinkedIn />
-      </IconButton>
+      </ActionIcon>
       © Harry Randazzo
-    </CustomFooter>
+    </MantineFooter>
   );
 };
 

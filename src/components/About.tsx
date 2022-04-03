@@ -1,5 +1,8 @@
 import Portfolio from "./Portfolio";
-
+export default function About() {
+  return (
+    <>
+      {`
 #### Skills
 
 - Proficient in building webapps w/ React.js + Typescript
@@ -21,6 +24,11 @@ import Portfolio from "./Portfolio";
 
 #### Projects
 
-<br />
 
-<Portfolio />
+`}
+      <br />
+
+      <Portfolio />
+    </>
+  );
+}
