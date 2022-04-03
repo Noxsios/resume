@@ -51,7 +51,6 @@
   }
 }
 
-
 /* temp remove prism borders */
 .mantine-Prism-code {
   border: none;
@@ -59,6 +58,10 @@
 }
 .mantine-PrismTabs-tabs {
   border-bottom: none;
+}
+h1 {
+  font-size: 3rem !important;
+  font-weight: 300 !important;
 }
 /* add hover behavior to h2 */
 h2::after {
@@ -76,9 +79,9 @@ h2 {
   user-select: none;
 }
 /* temp to fix prism tab coloring */
-.mantine-PrismTabs-tabActive{
+.mantine-PrismTabs-tabActive {
   opacity: 1 !important;
 }
-.mantine-PrismTabs-tab{
+.mantine-PrismTabs-tab {
   opacity: 0.5;
 }
