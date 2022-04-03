@@ -1,17 +1,17 @@
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Divider, Accordion, Button, Text, Group, AccordionProps, createStyles } from "@mantine/core";
 import { folio } from "./meta";
+import { HiChevronDown as ChevronDown } from "react-icons/hi";
 
 const useStyles = createStyles((theme, _params, getRef) => ({
   control: {
     ref: getRef("control"),
     border: 0,
-    opacity: 0.6,
+    padding: "0.75rem",
     color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
+    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : "transparent",
 
     "&:hover": {
-      backgroundColor: "transparent",
-      opacity: 1,
+      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : "transparent",
     },
   },
 
@@ -19,8 +19,8 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     borderBottom: 0,
     overflow: "hidden",
     transition: `box-shadow 150ms ${theme.transitionTimingFunction}`,
-    border: `1px solid ${theme.colors.dark[5]}`,
-    borderRadius: theme.radius.lg,
+    border: `1px dashed ${theme.colors.dark[7]}`,
+    borderRadius: theme.radius.md,
   },
 
   itemOpened: {
@@ -51,7 +51,7 @@ const Portfolio = () => {
     <StyledAccordion initialItem={0} multiple iconPosition="right">
       {folio.map((entry, idx) => (
         <Accordion.Item
-          icon={<ExpandMoreIcon />}
+          icon={<ChevronDown size={24} />}
           aria-label="Expand"
           aria-controls={"portfolio-content-" + idx}
           id={entry.title.toLowerCase().replace(/\s/g, "-") + "-accordion"}

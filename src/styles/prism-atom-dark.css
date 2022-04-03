@@ -1,0 +1,27 @@
+/**
+ * atom-dark theme for `prism.js`
+ * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
+ * @author Joe Gibson (@gibsjose)
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #1d1f21 !important;
+}
+
+.token.punctuation {
+	color: rgb(197, 200, 198) !important;
+}
+
+.token.string {
+	color: rgb(168, 255, 96) !important;
+}
+
+.token.property{
+    color: rgb(97, 175, 239) !important;
+}

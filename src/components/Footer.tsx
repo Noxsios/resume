@@ -1,23 +1,31 @@
-import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
-import { Footer as MantineFooter, ActionIcon, Center } from "@mantine/core";
+import { ActionIcon, Center, Divider } from "@mantine/core";
 import { socials } from "./meta";
 
 const Footer = () => {
   return (
-    <MantineFooter height={40}>
+    <>
+      <Divider variant="dashed" />
       <Center>
-        <ActionIcon component="a" href={socials[0].url} target="_blank">
-          <GitHub />
-        </ActionIcon>
-        <ActionIcon component="a" href={socials[1].url} target="_blank">
-          <Instagram />
-        </ActionIcon>
-        <ActionIcon component="a" href={socials[2].url} target="_blank">
-          <LinkedIn />
-        </ActionIcon>
+        {socials.map((social, idx) => (
+          <ActionIcon
+            key={idx}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            // aria-label={social.label}
+            size="xl"
+            radius={999}
+            component="a"
+            color={social.color}
+            variant="light"
+            mx="xs"
+          >
+            {social.icon}
+          </ActionIcon>
+        ))}
         © Harry Randazzo
       </Center>
-    </MantineFooter>
+    </>
   );
 };
 

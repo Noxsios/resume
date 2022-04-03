@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { FiGithub as GitHub, FiInstagram as Instagram, FiLinkedin, FiLinkedin as LinkedIn } from "react-icons/fi";
+import { Anchor } from "@mantine/core";
 
 export interface Folio {
   title: string;
@@ -13,8 +15,29 @@ interface Data {
   folio: Folio[];
   socials: {
     url: string;
+    icon: React.ReactNode;
+    color: string;
   }[];
 }
+
+const StyledAnchor = (props) => (
+  <Link passHref href={props.href}>
+    <Anchor
+      sx={(theme) => ({
+        backgroundColor: theme.colors.gray[8],
+        borderRadius: "0.2rem",
+        padding: "2px",
+        "&:hover": {
+          backgroundColor: theme.colors.gray[7],
+        },
+        color: theme.colors.blue[3],
+      })}
+      rel="noopener noreferrer"
+      target="_blank"
+      {...props}
+    />
+  </Link>
+);
 
 const data: Data = {
   skills: [
@@ -28,12 +51,12 @@ const data: Data = {
   ],
   qualifications: [
     <>
-      {"3+ years working as "} <Link href="https://www.airforce.com/careers/detail/cyber-transport-systems">Cyber Transport</Link>
+      {"3+ years working as "} <StyledAnchor href="https://www.airforce.com/careers/detail/cyber-transport-systems">Cyber Transport</StyledAnchor>
       {` (Computer Networking) Technician for USAF`}
     </>,
     <>
-      <Link href="https://www.galvanize.com/">Galvanize</Link> coding bootcamp graduate through the{" "}
-      <Link href="https://airmencoders.us/">Airmen Coders</Link> program
+      <StyledAnchor href="https://www.galvanize.com/">Galvanize</StyledAnchor> coding bootcamp graduate through the{" "}
+      <StyledAnchor href="https://airmencoders.us/">Airmen Coders</StyledAnchor> program
     </>,
     "COMPTIA Sec+ Certification",
     "(Soon) CCNA",
@@ -88,9 +111,9 @@ const data: Data = {
     },
   ],
   socials: [
-    { url: "https://github.com/noxsios" },
-    { url: "https://instagram.com/randazzoharry" },
-    { url: "https://www.linkedin.com/in/harry-randazzo/" },
+    { url: "https://github.com/noxsios", icon: <GitHub size={24} />, color: "gray" },
+    { url: "https://instagram.com/randazzoharry", icon: <Instagram size={24} />, color: "grape" },
+    { url: "https://www.linkedin.com/in/harry-randazzo/", icon: <FiLinkedin size={24} />, color: "blue" },
   ],
 };
 

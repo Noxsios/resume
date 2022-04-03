@@ -3,6 +3,7 @@ import "@fontsource/montserrat";
 import "@fontsource/recursive";
 import "../styles/theme.css";
 import theme from "../styles/theme";
+import "../styles/prism-atom-dark.css";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { MantineProvider } from "@mantine/core";
