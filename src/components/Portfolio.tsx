@@ -1,5 +1,5 @@
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Container, Divider, Accordion, Button, Text, Group, AccordionProps, createStyles } from "@mantine/core";
+import { Divider, Accordion, Button, Text, Group, AccordionProps, createStyles } from "@mantine/core";
 interface Folio {
   title: string;
   tldr: string;
@@ -12,7 +12,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     ref: getRef("control"),
     border: 0,
     opacity: 0.6,
-    color: theme.colorScheme === "dark" ? theme.colors.gray[3] : theme.black,
+    color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
 
     "&:hover": {
       backgroundColor: "transparent",
@@ -25,7 +25,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     overflow: "hidden",
     transition: `box-shadow 150ms ${theme.transitionTimingFunction}`,
     border: `1px solid ${theme.colors.dark[5]}`,
-    borderRadius: theme.radius.sm,
+    borderRadius: theme.radius.lg,
   },
 
   itemOpened: {
@@ -105,7 +105,7 @@ const Portfolio = () => {
     <StyledAccordion initialItem={0} multiple iconPosition="right">
       {folio.map((entry, idx) => (
         <Accordion.Item
-          icon={<ExpandMoreIcon color="primary" />}
+          icon={<ExpandMoreIcon />}
           aria-label="Expand"
           aria-controls={"portfolio-content-" + idx}
           id={entry.title.toLowerCase().replace(/\s/g, "-") + "-accordion"}
@@ -113,11 +113,13 @@ const Portfolio = () => {
           label={entry.title}
           my="lg"
         >
-          <Text>{entry.tldr}</Text>
-          <Divider my="xs" mx="lg" />
+          <Text mx="sm" color="gray">
+            {entry.tldr}
+          </Text>
+          <Divider my="md" />
           <Group position="right" my="sm">
             {entry.site && (
-              <Button uppercase variant="outline" component="a" href={entry.site} target="_blank" color="violet">
+              <Button uppercase variant="outline" component="a" href={entry.site} target="_blank" color="blue">
                 Site
               </Button>
             )}

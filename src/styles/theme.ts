@@ -1,6 +1,15 @@
-let theme = {
+import { MantineThemeOverride } from "@mantine/core";
+
+let theme: MantineThemeOverride = {
   fontFamily: '"Montserrat", sans-serif',
   fontFamilyMonospace: '"Fira Code", monospace',
+  fontSizes: {
+    xs: 12,
+    sm: 15,
+    md: 16,
+    lg: 18,
+    xl: 20,
+  },
   headings: {
     fontFamily: '"Recursive", "Segoe UI", "Helvetica Neue", Helvetica, Roboto, \'Open Sans\', FreeSans, sans-serif',
   },

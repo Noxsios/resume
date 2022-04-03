@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import ContactInfo from "../components/ContactAPI";
-// import InlineCode from "../components/InlineCode";
 import ReactRotatingText from "react-rotating-text";
 import About from "../components/About";
 import Footer from "../components/Footer";
-import { Stack, Box, Container, Button, Code, Divider, Text, Title, Center } from "@mantine/core";
+import { Stack, Box, Container, Button, Code, Text, Title, Center } from "@mantine/core";
 import Portfolio from "../components/Portfolio";
 
 const randomInterval = () => Math.floor(Math.random() * 100) + 50;
@@ -18,7 +17,7 @@ const IndexPage = () => {
         </Center>
         <Box>
           <Title order={1} align="center" color="primary">
-            Harry <Code sx={{ fontSize: "inherit" }}>{"'razzle'"}</Code> Randazzo
+            Harry <Code sx={{ fontSize: "inherit", borderRadius: "0.75rem" }}>{"'razzle'"}</Code> Randazzo
           </Title>
           <Title my="md" order={4} align="center" color="primary">
             <ReactRotatingText items={["Network Engineer", "Software Developer", "Nerd", "Razzle-Dazzle"]} typingInterval={randomInterval()} />
