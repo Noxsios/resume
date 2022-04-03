@@ -14,6 +14,8 @@ export default function About() {
         my="md"
         sx={(theme) => ({
           color: theme.colors.dark[1],
+          backdropFilter: "blur(4px)",
+          padding: "1rem",
         })}
       >
         {skills.map((skill, idx) => (
@@ -29,6 +31,8 @@ export default function About() {
         my="md"
         sx={(theme) => ({
           color: theme.colors.dark[1],
+          backdropFilter: "blur(4px)",
+          padding: "1rem",
         })}
       >
         {qualifications.map((qual, idx) => (

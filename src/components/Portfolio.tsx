@@ -48,7 +48,7 @@ function StyledAccordion(props: AccordionProps) {
 
 const Portfolio = () => {
   return (
-    <StyledAccordion initialItem={0} multiple iconPosition="right">
+    <StyledAccordion initialItem={0} iconPosition="right">
       {folio.map((entry, idx) => (
         <Accordion.Item
           icon={<ChevronDown size={24} />}
