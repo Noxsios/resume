@@ -1,5 +1,4 @@
 * {
-  scroll-margin-top: 2.5rem;
   scroll-behavior: smooth;
 }
 
@@ -11,13 +10,16 @@ body {
   width: 10px;
   height: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: none;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #818181;
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
@@ -30,9 +32,11 @@ body {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -42,14 +46,17 @@ body {
   0% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
+
 @keyframes bg-pan-left {
   0% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -60,13 +67,16 @@ body {
   border: none;
   border-radius: 1rem;
 }
+
 .mantine-PrismTabs-tabs {
   border-bottom: none;
 }
+
 h1 {
   font-size: 3rem !important;
   font-weight: 300 !important;
 }
+
 /* add hover behavior to h2 */
 h2::after {
   content: "";
@@ -76,16 +86,20 @@ h2::after {
   background: #c2870a;
   transition: width 0.3s ease-in-out;
 }
+
 h2:hover::after {
   width: 100%;
 }
+
 h2 {
   user-select: none;
 }
+
 /* temp to fix prism tab coloring */
 .mantine-PrismTabs-tabActive {
   opacity: 1 !important;
 }
+
 .mantine-PrismTabs-tab {
   opacity: 0.5;
 }
