@@ -1,5 +1,6 @@
 import { FiGithub as GitHub, FiInstagram as Instagram, FiLinkedin as LinkedIn } from "react-icons/fi";
 import StyledAnchor from "./StyledAnchor";
+import { ReactElement } from "react";
 export interface Folio {
   title: string;
   tldr: string;
@@ -7,15 +8,19 @@ export interface Folio {
   site?: string;
 }
 
-interface Data {
+export type Qualifaction = string | ReactElement;
+
+export type Social = {
+  url: string;
+  icon: ReactElement;
+  color: string;
+};
+
+export interface Data {
   skills: string[];
-  qualifications: string[] | React.ReactNode[];
+  qualifications: Qualifaction[];
   folio: Folio[];
-  socials: {
-    url: string;
-    icon: React.ReactNode;
-    color: string;
-  }[];
+  socials: Social[];
 }
 
 const data: Data = {
@@ -30,7 +35,7 @@ const data: Data = {
   ],
   qualifications: [
     <>
-      {"3+ years working as "} <StyledAnchor href="https://www.airforce.com/careers/detail/cyber-transport-systems">Cyber Transport</StyledAnchor>
+      {"3+ years working as a"} <StyledAnchor href="https://www.airforce.com/careers/detail/cyber-transport-systems">Cyber Transport</StyledAnchor>
       {` (Computer Networking) Technician for USAF`}
     </>,
     <>

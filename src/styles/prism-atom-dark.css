@@ -25,3 +25,11 @@ pre[class*="language-"] {
 .token.property {
 	color: rgb(97, 175, 239) !important;
 }
+
+.token.plain {
+	color: #c2870a;
+}
+
+.token.title.important {
+	color: #0ac2b3;
+}
