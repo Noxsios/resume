@@ -48,6 +48,11 @@ const data: Data = {
   ],
   folio: [
     {
+      title: "R2-D2 - Robotic Release Documentation Delivery",
+      tldr: "Python release engineering helper CLI for Platform One's Big Bang product; automate release notes generation, version bumps, etc...",
+      repo: "https://repo1.dso.mil/platform-one/big-bang/apps/product-tools/R2-D2",
+    },
+    {
       title: "Big Bang Docs",
       tldr: "A generator that uses Markdown files dispersed across Platform One's Big Bang package ecosystem to construct a single, cohesive documentation site.",
       repo: "https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/bb-docs-generator",

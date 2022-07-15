@@ -1,10 +1,10 @@
 {
-  "workbench.colorTheme": "Shades of Purple",
+  "workbench.colorTheme": "Palenight Operator",
   "workbench.sideBar.location": "right",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Hack NF",
   "editor.cursorBlinking": "expand",
   "prettier.printWidth": 150
 }
