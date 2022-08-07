@@ -55,8 +55,8 @@ const data: Data = {
     {
       title: "Big Bang Docs",
       tldr: "A generator that uses Markdown files dispersed across Platform One's Big Bang package ecosystem to construct a single, cohesive documentation site.",
-      repo: "https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/bb-docs-generator",
-      site: "https://docs-bigbang.pages.dev/",
+      repo: "https://github.com/Noxsios/bb-docs-compiler",
+      site: "https://bb-docs-compiler.vercel.app/",
     },
     {
       title: "palx-pwa",
