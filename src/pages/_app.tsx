@@ -1,6 +1,9 @@
 import "@fontsource/fira-code";
 import "@fontsource/montserrat";
 import "@fontsource/recursive";
+import "@fontsource/crimson-text";
+import "@fontsource/crimson-text/400-italic.css";
+import "@fontsource/crimson-text/600.css";
 import "../styles/theme.css";
 import theme from "../styles/theme";
 import "../styles/prism-atom-dark.css";

@@ -23,6 +23,13 @@ export interface Data {
   socials: Social[];
 }
 
+export interface Education {
+  institution: string;
+  name: string;
+  location: string;
+  timeframe: string;
+}
+
 const data: Data = {
   skills: [
     "Proficient in building webapps w/ React.js + Typescript",
@@ -103,6 +110,7 @@ const data: Data = {
     { url: "https://instagram.com/randazzoharry", icon: <Instagram size={24} />, color: "grape" },
     { url: "https://www.linkedin.com/in/harry-randazzo/", icon: <LinkedIn size={24} />, color: "blue" },
   ],
+  education: [],
 };
 
 const { skills, qualifications, folio, socials } = data;
