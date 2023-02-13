@@ -44,7 +44,7 @@ const IndexPage = () => {
               <ReactRotatingText items={["Network Engineer", "Software Developer", "Nerd", "Razzle-Dazzle"]} typingInterval={randomInterval()} />
             </Title>
             <Text id="caption" my="lg" color="green" sx={{ fontFamily: "Fira Code, monospace" }}>
-              Hi there, I&apos;m Razzle: a software developer and network engineer currently employed by the U.S. Air Force. I like solving problems
+              Hi there, I&apos;m Razzle: a software developer and network engineer currently employed by Defense Unicorns. I like solving problems
               and building things.
             </Text>
             <Center>
