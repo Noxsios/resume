@@ -4,6 +4,7 @@ import ReactRotatingText from "react-rotating-text";
 import About from "../components/About";
 import Footer from "../components/Footer";
 import { Stack, Box, Container, Button, Code, Text, Title, Center, Divider, MediaQuery } from "@mantine/core";
+import { Anchor } from "@mantine/core";
 import Portfolio from "../components/Portfolio";
 import { AiFillProject } from "react-icons/ai";
 
@@ -44,8 +45,15 @@ const IndexPage = () => {
               <ReactRotatingText items={["Network Engineer", "Software Developer", "Nerd", "Razzle-Dazzle"]} typingInterval={randomInterval()} />
             </Title>
             <Text id="caption" my="lg" color="green" sx={{ fontFamily: "Fira Code, monospace" }}>
-              Hi there, I&apos;m Razzle: a software developer and network engineer currently employed by the U.S. Air Force. I like solving problems
-              and building things.
+              Hi there, I&apos;m Razzle: a software developer and network engineer currently employed by{" "}
+              <Anchor href={"https://defenseunicorns.com"} target="_blank" rel="noopener noreferrer">
+                Defense Unicorns
+              </Anchor>{" "}
+              to work on{" "}
+              <Anchor target="_blank" rel="noopener noreferrer" href={"https://github.com/defenseunicorns/zarf"}>
+                Zarf
+              </Anchor>
+              . I like solving problems and building things.
             </Text>
             <Center>
               <Button color="blue" uppercase variant="outline" component="a" href="#contact">
